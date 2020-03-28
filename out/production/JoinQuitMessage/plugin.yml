@@ -1,0 +1,5 @@
+name: JoinQuitMessage
+main: me.guwooing.join.Main
+version: 0.0.1
+author: Guwooing
+description: Basic plugin
