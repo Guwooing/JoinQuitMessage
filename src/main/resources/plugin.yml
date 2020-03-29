@@ -2,4 +2,4 @@ name: JoinQuitMessage
 main: me.guwooing.join.Main
 version: 0.0.1
 author: Guwooing
-description: Basic plugin
+description: A Minecraft plugin thats simply changes the default login/logout Minecraft message
