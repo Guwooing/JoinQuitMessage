@@ -1,7 +1,6 @@
 package me.guwooing.join;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,7 +18,7 @@ public class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onDisable() {
-
+        saveDefaultConfig();
     }
 
     @EventHandler
