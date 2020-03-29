@@ -1,5 +1,6 @@
 package me.guwooing.join;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -13,6 +14,7 @@ public class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(this, this);
+        saveDefaultConfig();
     }
 
     @Override
@@ -23,12 +25,20 @@ public class Main extends JavaPlugin implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
-        e.setJoinMessage(ChatColor.DARK_GRAY + "[" + ChatColor.GREEN + "+" + ChatColor.DARK_GRAY + "] " + ChatColor.YELLOW + p.getName());
+        e.setJoinMessage(Utils.chat(getConfig().getString("logon").replace("<player>", p.getName())));
+
+        //announces if the player is new/joined before
+        if (!p.hasPlayedBefore()) {
+            Bukkit.broadcastMessage(
+                    Utils.chat(getConfig().getString("firstJoin_message").replace("<player>", p.getName())));
+        } else {
+            return;
+        }
     }
 
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent e) {
         Player p = e.getPlayer();
-        e.setQuitMessage(ChatColor.DARK_GRAY + "[" + ChatColor.RED + "-" + ChatColor.DARK_GRAY + "] " + ChatColor.YELLOW + p.getName());
+        e.setQuitMessage(Utils.chat(getConfig().getString("logout").replace("<player>", p.getName())));
     }
 }
