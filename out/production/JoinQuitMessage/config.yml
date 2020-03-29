@@ -1,7 +1,7 @@
 #<player> is if you want the IGN to be displayed.
-#Color codes must have '&' and NOT any other character.
+#Color codes must have '&' and NOT any other symbol.
 
-firstJoin_message: '&e<player> &7has joined for the first time!'
+firstJoin_message: '&e<player> &7has joined for the first time! &c#<ulid>'
 
 logon: '&8[&a+&8] &e<player>'
 logout: '&8[&c-&8] &e<player>'
