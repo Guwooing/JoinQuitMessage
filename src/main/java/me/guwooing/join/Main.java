@@ -30,7 +30,7 @@ public class Main extends JavaPlugin implements Listener {
         //announces if the player is new/joined before
         if (!p.hasPlayedBefore()) {
             Bukkit.broadcastMessage(
-                    Utils.chat(getConfig().getString("firstJoin_message").replace("<player>", p.getName()).replace("<ulid>", Integer.toString(getServer().getOfflinePlayers().length + getServer().getOnlinePlayers().size()))));
+                    Utils.chat(getConfig().getString("firstJoin_message").replace("<player>", p.getName()).replace("<ulid>", Integer.toString(getServer().getOnlinePlayers().size()))));
         } else {
             return;
         }

@@ -1,4 +1,5 @@
 #<player> is if you want the IGN to be displayed.
+#<ulid> unique login id, is given to a player when they first join the server.
 #Color codes must have '&' and NOT any other symbol.
 
 firstJoin_message: '&e<player> &7has joined for the first time! &c#<ulid>'
