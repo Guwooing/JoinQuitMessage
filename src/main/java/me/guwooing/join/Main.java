@@ -24,7 +24,8 @@ public class Main extends JavaPlugin implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
-        e.setJoinMessage(Utils.chat(getConfig().getString("logon").replace("<player>", p.getName())));
+        e.setJoinMessage(
+                Utils.chat(getConfig().getString("logon").replace("<player>", p.getName())));
 
         //announces if the player is new/joined before
         if (!p.hasPlayedBefore()) {
@@ -38,6 +39,7 @@ public class Main extends JavaPlugin implements Listener {
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent e) {
         Player p = e.getPlayer();
-        e.setQuitMessage(Utils.chat(getConfig().getString("logout").replace("<player>", p.getName())));
+        e.setQuitMessage(
+                Utils.chat(getConfig().getString("logout").replace("<player>", p.getName())));
     }
 }
